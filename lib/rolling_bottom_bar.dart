@@ -8,7 +8,7 @@ import 'package:rolling_bottom_bar/rolling_painter.dart';
 /// Class to generate the rolling bottom bar
 class RollingBottomBar extends StatefulWidget {
   /// Controller for animation
-  final PageController? controller;
+  final PageController controller;
 
   /// List of items to render into the bottom bar
   final List<RollingBottomBarItem>? items;
@@ -19,7 +19,7 @@ class RollingBottomBar extends StatefulWidget {
   /// Color to paint the custom paint and draw the bottom bar
   final Color color;
 
-  /// Color to indicate the unactive item
+  /// Color to indicate the inactive item
   final Color? itemColor;
 
   /// Color to indicate the active item
@@ -36,9 +36,9 @@ class RollingBottomBar extends StatefulWidget {
 
   RollingBottomBar(
       {Key? key,
-      @required this.controller,
-      @required this.items,
-      @required this.onTap,
+      required this.controller,
+      required this.items,
+      required this.onTap,
       this.color = Colors.white,
       this.itemColor,
       this.activeItemColor = Colors.green,
@@ -67,13 +67,13 @@ class _RollingBottomBarState extends State<RollingBottomBar> {
     const height = kHeight + kMargin * 2;
 
     return AnimatedBuilder(
-      animation: widget.controller!,
+      animation: widget.controller,
       builder: (BuildContext _, Widget? child) {
         double _scrollPosition = 0.0;
         int _currentIndex = 0;
-        if (widget.controller?.hasClients ?? false) {
-          _scrollPosition = widget.controller!.page!;
-          _currentIndex = (widget.controller!.page! + 0.5).toInt();
+        if (widget.controller.hasClients ) {
+          _scrollPosition = widget.controller.page;
+          _currentIndex = (widget.controller.page + 0.5).toInt();
         }
 
         return Stack(

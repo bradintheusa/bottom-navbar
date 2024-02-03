@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+  MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -54,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       extendBody: true,
       bottomNavigationBar: RollingBottomBar(
+        
         controller: _controller,
         flat: true,
         useActiveColorByDefault: false,

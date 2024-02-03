@@ -7,7 +7,7 @@ class RollingBottomBarItem {
   const RollingBottomBarItem(this.iconData,
       {this.label, this.activeColor = Colors.green});
 
-  /// IconData necesary to render the icon
+  /// IconData necessary to render the icon
   final IconData? iconData;
 
   /// String to put the label for the icon
@@ -17,7 +17,7 @@ class RollingBottomBarItem {
   final Color? activeColor;
 }
 
-/// Class to generate the unactive icon on bottom bar
+/// Class to generate the inactive icon on bottom bar
 class RollingItem extends StatelessWidget {
   const RollingItem(this.index,
       {this.iconData, this.label, this.color, this.onTap});
