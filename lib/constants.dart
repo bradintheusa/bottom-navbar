@@ -1,5 +1,5 @@
 ///  Double const for margin
-const double kMargin = 14.0;
+const double kMargin = 16.0;
 
 /// Double const for height
 const double kHeight = 62.0;

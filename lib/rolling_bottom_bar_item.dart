@@ -5,13 +5,13 @@ import 'constants.dart';
 
 class RollingBottomBarItem {
   const RollingBottomBarItem(this.iconData,
-      {this.label, this.activeColor = Colors.green});
+      {required this.label, this.activeColor = Colors.green});
 
   /// IconData necessary to render the icon
   final IconData? iconData;
 
   /// String to put the label for the icon
-  final String? label;
+  final String label;
 
   /// Color to use when icon is active
   final Color? activeColor;
@@ -20,7 +20,7 @@ class RollingBottomBarItem {
 /// Class to generate the inactive icon on bottom bar
 class RollingItem extends StatelessWidget {
   const RollingItem(this.index,
-      {this.iconData, this.label, this.color, this.onTap});
+      {this.iconData, required this.label, this.color, this.onTap});
 
   /// Int value to indicate the index on app bar
   final int index;
@@ -29,7 +29,7 @@ class RollingItem extends StatelessWidget {
   final IconData? iconData;
 
   /// String to indicate the label item
-  final String? label;
+  final String label;
 
   /// Value to indicate the icon color
   final Color? color;
@@ -54,16 +54,15 @@ class RollingItem extends StatelessWidget {
                 size: kItemSize - 4,
                 color: color ?? Colors.grey[700],
               ),
-              if (label != null) ...[
-                const SizedBox(height: 3.0),
-                Text(
-                  label!,
-                  style: TextStyle(
-                    color: color ?? Colors.grey[700],
-                    fontSize: 12.0,
-                  ),
+              const SizedBox(height: 3.0),
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: color ?? Colors.grey[700],
+                  fontSize: 12.0,
                 ),
-              ],
+              ),
             ],
           ),
           onPressed: () => onTap!(index),
