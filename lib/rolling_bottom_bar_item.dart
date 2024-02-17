@@ -20,7 +20,7 @@ class RollingBottomBarItem {
 /// Class to generate the inactive icon on bottom bar
 class RollingItem extends StatelessWidget {
   const RollingItem(this.index,
-      {this.iconData, required this.label, this.color, this.onTap});
+      {this.iconData, required this.label, required this.color, this.onTap});
 
   /// Int value to indicate the index on app bar
   final int index;
@@ -32,7 +32,7 @@ class RollingItem extends StatelessWidget {
   final String label;
 
   /// Value to indicate the icon color
-  final Color? color;
+  final Color color;
 
   /// Function called when an item was tapped
   final ValueChanged<int>? onTap;
@@ -42,7 +42,7 @@ class RollingItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(0.0),
       child: SizedBox.fromSize(
-        size: const Size(kCircleRadius * 2, kCircleRadius * 2),
+        size: const Size(kCircleRadius * 2.2, kCircleRadius * 2.2),
         child: RawMaterialButton(
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(0.0),
@@ -52,14 +52,14 @@ class RollingItem extends StatelessWidget {
               Icon(
                 iconData,
                 size: kItemSize - 4,
-                color: color ?? Colors.grey[700],
+                color: color ,
               ),
               const SizedBox(height: 3.0),
               Text(
                 label,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: color ?? Colors.grey[700],
+                  color: color ,
                   fontSize: 12.0,
                 ),
               ),

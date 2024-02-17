@@ -20,7 +20,7 @@ class RollingBottomBar extends StatefulWidget {
   final Color color;
 
   /// Color to indicate the inactive item
-  final Color? itemColor;
+  final Color itemColor;
 
   /// Color to indicate the active item
   final Color? activeItemColor;
@@ -40,7 +40,7 @@ class RollingBottomBar extends StatefulWidget {
       required this.items,
       required this.onTap,
       this.color = Colors.white,
-      this.itemColor,
+      required this.itemColor,
       this.activeItemColor = Colors.green,
       this.enableIconRotation,
       this.flat = false,
@@ -72,8 +72,8 @@ class _RollingBottomBarState extends State<RollingBottomBar> {
         double _scrollPosition = 0.0;
         int _currentIndex = 0;
         if (widget.controller.hasClients ) {
-          _scrollPosition = widget.controller.page;
-          _currentIndex = (widget.controller.page + 0.5).toInt();
+          _scrollPosition = widget.controller.page??0;
+          _currentIndex = ((widget.controller.page??0) + 0.5).toInt();
         }
 
         return Stack(

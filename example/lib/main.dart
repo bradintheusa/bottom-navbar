@@ -54,13 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       extendBody: true,
       bottomNavigationBar: RollingBottomBar(
-        
+        itemColor: Colors.orange,
         controller: _controller,
         flat: true,
         useActiveColorByDefault: false,
         items: [
           RollingBottomBarItem(Icons.home, label: 'Page 1', activeColor: Colors.redAccent),
-          RollingBottomBarItem(Icons.star, label: 'Page 2', activeColor: Colors.blueAccent),
+          RollingBottomBarItem(Icons.star, label: 'Page 2 and a bit', activeColor: Colors.blueAccent),
           RollingBottomBarItem(Icons.person, label: 'Page 3', activeColor: Colors.yellowAccent),
           RollingBottomBarItem(Icons.access_alarm, label: 'Page 4', activeColor: Colors.orangeAccent),
         ],
